@@ -10,22 +10,22 @@ describe('Haiku', () => {
   });
 
   test('A word has more than one syllable', () => {
-    const newHaiku = new Haiku("spaghetti");
+    const newHaiku = new Haiku("spaghetti", "", "");
     expect(newHaiku.checkSyl(newHaiku.line1)).toEqual(3);
   });
 
   test('Whitespaces test', () => {
-    const newHaiku = new Haiku("    dfgfakg  jh   ");
+    const newHaiku = new Haiku("    dfgfakg  jh   ", "", "");
     expect(newHaiku.checkSyl(newHaiku.line1)).toEqual(1);
   });
 
   test('A line has more than one word, counts syllables', () => {
-    const newHaiku = new Haiku("spaghetti helle caste");
+    const newHaiku = new Haiku("spaghetti helle caste", "", "");
     expect(newHaiku.checkSyl(newHaiku.line1)).toEqual(6);
   });
 
   test('A word has adjacent vowels, but only counts as one syllable', () => {
-    const newHaiku = new Haiku("deepii spaghetti helle caste");
+    const newHaiku = new Haiku("deepii spaghetti helle caste", "", "");
     expect(newHaiku.checkSyl(newHaiku.line1)).toEqual(8);
   });
 
@@ -46,7 +46,13 @@ describe('Haiku', () => {
 
   test('Punctuation breaks checkSyl. Regex will pass the test if implemented', () => {
     const newHaiku = new Haiku("spaghetti, caste? hi", "spaghetti helle bobby", "spaghetti, caste? hi.");
-    expect(newHaiku.checkLines()).toEqual(false);
+    expect(newHaiku.checkLines()).toEqual(true);
+  });
+
+  test('Test generator. Use the generator to create a string which is checked for number of syllables.', () => {
+    const newHaiku = new Haiku("", "", "");
+    let randHaiku = newHaiku.generator(5).join(" ");
+    expect(newHaiku.checkSyl(randHaiku)).toEqual(5);
   });
 
   // test('One or more empty lines do not compose a haiku', () => {

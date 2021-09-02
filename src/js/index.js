@@ -22,4 +22,14 @@ $(function () {
       $('#response').append(`<p>Your "haiku" is not a haiku. Try again.</p>`);
     }
   });
+
+  $('#haiku-generator-form').submit(function (event) {
+    event.preventDefault();
+    $("#response").empty();
+    const randHaiku = new Haiku();
+      $('#response').append(`<li>${randHaiku.generator(5).join(" ")}</li>`);
+      $('#response').append(`<li>${randHaiku.generator(7).join(" ")}</li>`);
+      $('#response').append(`<li>${randHaiku.generator(5).join(" ")}</li>`);
+  });
 });
+
