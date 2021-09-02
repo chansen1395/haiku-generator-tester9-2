@@ -46,7 +46,7 @@ describe('Haiku', () => {
 
   test('Punctuation breaks checkSyl. Regex will pass the test if implemented', () => {
     const newHaiku = new Haiku("spaghetti, caste? hi", "spaghetti helle bobby", "spaghetti, caste? hi.");
-    expect(newHaiku.checkLines()).toEqual(true);
+    expect(newHaiku.checkLines()).toEqual(false);
   });
 
   test('Test generator. Use the generator to create a string which is checked for number of syllables.', () => {

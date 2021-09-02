@@ -1,8 +1,8 @@
 export default class Haiku {
   constructor(line1, line2, line3) {
-    this.line1 = line1.trim().replace(/[.,!?]/g, "");
-    this.line2 = line2.trim().replace(/[.,!?]/g, "");
-    this.line3 = line3.trim().replace(/[.,!?]/g, "");
+    this.line1 = line1;
+    this.line2 = line2;
+    this.line3 = line3;
     // the reason .trim().replace(/[.,!?]/g, "") cause failures could
     // be because some tests do not use 3 parameters
   }
@@ -49,10 +49,10 @@ export default class Haiku {
       if (this.checkSyl(words[i]) <= sylLeft) {
         sylLeft -= this.checkSyl(words[i]);
         newLine.push(words[i]);
+      }
     }
+    return newLine;
   }
-  return newLine;
-}
 
 }
 
@@ -79,4 +79,4 @@ export default class Haiku {
 // for each adjacent syllable "[ae]sth[e]t[i]cs"
 
 // Repo Link:
-// https://github.com/chansen1395/haiku-creator9-1
+// https://github.com/chansen1395/haiku-generator-tester9-2
