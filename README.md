@@ -18,9 +18,9 @@
 _This application has been created to demonstrate using a project template and implementing classes with Jest for TDD._
 
 * User enters 3 lines of text, which are checked for Haiku syllable formatting:
-  - {not example bread} -- 5 syllables
-  - {fraction found huge invent horse} -- 7 syllables
-  - {morning four state far} -- 5 syllables
+  - {size east for found age} -- 5 syllables
+  - {horse record reach charge hole search} -- 7 syllables
+  - {process very cry} -- 5 syllables
 * If it does not have the correct number of syllables, a message will appear, saying such.
 * A user may randomly generate a Haiku when a button is pressed.
 
